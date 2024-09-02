@@ -44,7 +44,7 @@
          th:errors="*{zip}"></span><br/>
    </div>
    <div class="form-group">
-   <input type="text" th:field="*{userName}" placeholder="User Name"/>
+   <input type="text" th:field="*{userName}" placeholder="model.User Name"/>
    <span th:if="${#fields.hasErrors('userName')}"
          th:errors="*{userName}"></span><br/>
    </div>

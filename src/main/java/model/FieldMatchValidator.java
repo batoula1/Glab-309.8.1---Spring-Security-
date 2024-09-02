@@ -1,7 +1,8 @@
+package model;
+
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.BeanWrapperImpl;
-import jakarta.persistence.*;
 
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 

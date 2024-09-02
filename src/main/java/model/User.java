@@ -1,7 +1,9 @@
+package model;
 
 import lombok.*;
         import jakarta.persistence.*;
-        import java.util.Collection;
+
+import java.util.Collection;
 
 /**
  * @author Igor Adulyan

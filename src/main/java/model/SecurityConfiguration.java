@@ -1,3 +1,5 @@
+package model;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 /**
- * SecurityConfiguration class completely refactored
+ * model.SecurityConfiguration class completely refactored
  * IMPORTANT:
  * if you are going to use for specific endpoint more than one user role
  * always use hasAnyRole(...)

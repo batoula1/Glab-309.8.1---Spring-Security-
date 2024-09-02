@@ -1,26 +1,24 @@
+package model;
+
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.sound.midi.SysexMessage;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 /**
  * @implNote
- * UserPrincipal class which implements UserDetails interface.
+ * model.UserPrincipal class which implements UserDetails interface.
  * This way you get more flexibility and control over user authorization and authentication process.
  */
 @Service
@@ -46,7 +44,7 @@ public class UserServiceImpl implements UserService {
 
             throw new UsernameNotFoundException("Invalid username or password.");
         }
-        /* return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),   mapRolesToAuthorities(user.getRoles()));*/
+        /* return new org.springframework.security.core.userdetails.model.User(user.getUserName(), user.getPassword(),   mapRolesToAuthorities(user.getRoles()));*/
         return new UserPrincipal(user, roleService.getRolesByUser(user.getId()));
     }
 
